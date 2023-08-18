@@ -1,13 +1,9 @@
-declare namespace dipUtils {
-  /**
-   * 生成数字范围内的随机数
-   * @param min 最小数字
-   * @param max 最大数字
-   * @returns number类型
-   */
-  export function random(min: number, max: number): number
+import { EventEmiter } from "./libs/event-emiter/EventEmiter"
+
+declare namespace toolkit {
+  export const EventEmiter: EventEmiter
 }
 
 declare module 'dip-utils' {
-  export = dipUtils
+  export = toolkit
 }
