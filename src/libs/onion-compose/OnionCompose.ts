@@ -6,8 +6,7 @@ export class OnionCompose<T> {
   middlewares: Middleware<T>[] = []
 
   add(middleware: Middleware<T>): () => void {
-    const idx = this.middlewares.findIndex(mid => mid.level > middleware.level) - 1
-    this.middlewares.splice(idx < -1 ? this.middlewares.length : idx, 0, middleware)
+    this.middlewares = this.middlewares.concat(middleware).sort((a, b) => a.level - b.level)
     return () => {
       this.remove(middleware)
     }

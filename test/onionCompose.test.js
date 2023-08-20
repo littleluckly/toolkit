@@ -4,6 +4,14 @@ describe("Onion-Compose洋葱圈模型", () => {
     const onionCompose = new OnionCompose();
     const result = [];
     onionCompose.add({
+      level: 9,
+      middleware: async (_, next) => {
+        result.push("2");
+        await next();
+        result.push("3");
+      },
+    });
+    onionCompose.add({
       level: 0,
       middleware: async (_, next) => {
         result.push("0");
@@ -12,14 +20,14 @@ describe("Onion-Compose洋葱圈模型", () => {
       },
     });
     onionCompose.add({
-      level: 1,
+      level: 3,
       middleware: async (_, next) => {
-        result.push("2");
+        result.push("4");
         await next();
-        result.push("3");
+        result.push("5");
       },
     });
     await onionCompose.dispatch();
-    expect(result).toEqual(["0", "2", "3", "1"]);
+    expect(result).toEqual(["0", "4", "2", "3", "5", "1"]);
   });
 });
