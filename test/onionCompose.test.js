@@ -1,4 +1,4 @@
-import { OnionCompose } from "../src/libs/onion-compose/OnionCompose";
+import { OnionCompose } from "../src/libs/compose/OnionCompose";
 describe("Onion-Compose洋葱圈模型", () => {
   it("顺序调用", async () => {
     const onionCompose = new OnionCompose();
