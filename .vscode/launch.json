@@ -12,7 +12,7 @@
         "<node_internals>/**"
       ],
       "runtimeArgs": ["-r", "ts-node/register"],
-      "program": "${workspaceFolder}/src/libs/compose/SyncCompose.ts",
+      "program": "${workspaceFolder}/src/libs/async-pool/AsyncPool.ts",
       "outFiles": [
         "${workspaceFolder}/**/*.js"
       ]
