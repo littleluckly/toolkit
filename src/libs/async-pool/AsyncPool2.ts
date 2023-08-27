@@ -13,7 +13,7 @@ export async function asyncPool(tasks: Fn[], limit: number): Promise<any> {
       }
     }
   }
-  Promise.all(allTasks)
+  await Promise.all(allTasks)
 }
 
 
@@ -50,4 +50,4 @@ const fn4 = () => {
   });
 };
 
-asyncPool([fn1, fn2, fn3, fn4], 2)
+// asyncPool([fn1, fn2, fn3, fn4], 2)

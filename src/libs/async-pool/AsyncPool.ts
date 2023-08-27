@@ -78,4 +78,4 @@ const testFn = async () => {
   const res = await asyncPool([fn1, fn2, fn3, fn4, fn5, fn6], 2)
   console.log('res', res);
 }
-testFn()
+// testFn()
